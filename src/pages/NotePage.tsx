@@ -41,7 +41,10 @@ export default function NotePage() {
       </header>
       <div className="article-layout">
         <div className="markdown-body">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown
+            className="markdown-content"
+            remarkPlugins={[remarkGfm]}
+          >
             {note.content}
           </ReactMarkdown>
         </div>
