@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { ArrowUpRight } from 'lucide-react'
-import type { Note } from '../data/notes'
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+import type { Note } from "../data/notes";
 
 export default function NoteCard({ note }: { note: Note }) {
   return (
@@ -13,8 +13,7 @@ export default function NoteCard({ note }: { note: Note }) {
       <p>{note.description}</p>
       <div className="note-card-bottom">
         <span>{note.date}</span>
-        <span>{note.readTime}</span>
       </div>
     </Link>
-  )
+  );
 }

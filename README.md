@@ -19,8 +19,9 @@ npm run preview
 ## Add or edit notes
 
 Edit `src/data/notes.ts`. Each note has:
+
 - `id`: URL-friendly unique identifier
-- `title`, `description`, `category`, `tags`, `date`, `readTime`
+- `title`, `description`, `category`, `tags`, `date`
 - `content`: Markdown string
 
 The site is intentionally static: no login, database, or admin panel is required. Add notes directly to the data file and deploy the updated project.
