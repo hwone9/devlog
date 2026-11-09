@@ -1,18 +1,7 @@
 import { NavLink } from "react-router-dom";
-import {
-  BookOpen,
-  Code2,
-  Database,
-  FileText,
-  Layers,
-  Wrench,
-  X,
-  Mail,
-} from "lucide-react";
+import { BookOpen, X } from "lucide-react";
 import { categories } from "../data/categories";
 import CategoryIcon from "./CategoryIcon";
-
-const icons = [Code2, Layers, FileText, BookOpen, Database, Wrench, Mail];
 
 type SidebarProps = { open: boolean; onClose: () => void };
 
