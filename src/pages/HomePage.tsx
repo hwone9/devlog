@@ -4,7 +4,6 @@ import { notes } from "../data/notes";
 import { categories } from "../data/categories";
 import { site } from "../data/site";
 import NoteCard from "../components/NoteCard";
-import CategoryIcon from "../components/CategoryIcon";
 
 export default function HomePage() {
   const recentNotes = [...notes]
