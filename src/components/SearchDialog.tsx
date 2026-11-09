@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Search, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { notes } from "../data/notes";
+import { categories } from "../data/categories";
 
 type Props = { open: boolean; onClose: () => void };
 
@@ -12,7 +13,7 @@ export default function SearchDialog({ open, onClose }: Props) {
     const value = query.trim().toLowerCase();
     if (!value) return [];
     return notes.filter((note) =>
-      [note.title, note.description, note.category, ...note.tags]
+      [note.title, note.description, note.categoryId, ...note.tags]
         .join(" ")
         .toLowerCase()
         .includes(value),
@@ -72,7 +73,11 @@ export default function SearchDialog({ open, onClose }: Props) {
                 <div>
                   <strong>{note.title}</strong>
                   <span>
-                    {note.category} · {note.description}
+                    {
+                      categories.find((item) => item.id === note.categoryId)
+                        ?.name
+                    }{" "}
+                    · {note.description}
                   </span>
                 </div>
                 <span className="result-date">{note.date}</span>

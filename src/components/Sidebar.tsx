@@ -9,7 +9,8 @@ import {
   X,
   Mail,
 } from "lucide-react";
-import { categories } from "../data/notes";
+import { categories } from "../data/categories";
+import CategoryIcon from "./CategoryIcon";
 
 const icons = [Code2, Layers, FileText, BookOpen, Database, Wrench, Mail];
 
@@ -49,8 +50,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         </div>
         <div className="nav-group">
           <p className="nav-label">CATEGORIES</p>
-          {categories.map((category, index) => {
-            const Icon = icons[index] ?? FileText;
+          {categories.map((category) => {
             return (
               <NavLink
                 key={category.name}
@@ -60,7 +60,8 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
                   `nav-item ${isActive ? "active" : ""}`
                 }
               >
-                <Icon size={16} /> {category.name}
+                {/* <Icon size={16} /> {category.name} */}
+                <CategoryIcon icon={category.id} size={16} /> {category.name}
               </NavLink>
             );
           })}

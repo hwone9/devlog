@@ -41,7 +41,7 @@ export default function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/category/:name" element={<CategoryPage />} />
+            <Route path="/category/:id" element={<CategoryPage />} />
             <Route path="/notes/:id" element={<NotePage />} />
             <Route
               path="*"

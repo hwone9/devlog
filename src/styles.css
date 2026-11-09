@@ -281,6 +281,12 @@ kbd {
 .category-card:hover {
   background: var(--gray-50);
 }
+.cartegory-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 8px;
+}
 .category-card-title {
   font-size: 14px;
   font-weight: 600;
@@ -331,6 +337,7 @@ kbd {
   align-items: center;
 }
 .category-label {
+  width: fit-content;
   color: var(--gray-500);
   font:
     10px "DM Mono",

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, FileText } from "lucide-react";
-import { categories, notes } from "../data/notes";
+import { notes } from "../data/notes";
+import { categories } from "../data/categories";
 import { site } from "../data/site";
 import NoteCard from "../components/NoteCard";
+import CategoryIcon from "../components/CategoryIcon";
 
 export default function HomePage() {
   const recentNotes = [...notes]
@@ -35,12 +37,12 @@ export default function HomePage() {
         <div className="category-grid">
           {categories.map((category) => {
             const count = notes.filter(
-              (note) => note.category === category.name,
+              (note) => note.categoryId === category.id,
             ).length;
             return (
               <Link
                 key={category.name}
-                to={`/category/${encodeURIComponent(category.name)}`}
+                to={`/category/${encodeURIComponent(category.id)}`}
                 className="category-card"
               >
                 <span className="category-card-title">{category.name}</span>

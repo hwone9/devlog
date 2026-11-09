@@ -3,10 +3,12 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft } from "lucide-react";
 import { notes } from "../data/notes";
+import { categories } from "../data/categories";
 
 export default function NotePage() {
   const { id } = useParams();
   const note = notes.find((item) => item.id === id);
+  const category = categories.find((item) => item.id === id);
 
   if (!note)
     return (
@@ -19,13 +21,13 @@ export default function NotePage() {
   return (
     <article className="page-content article-page">
       <Link
-        to={`/category/${encodeURIComponent(note.category)}`}
+        to={`/category/${encodeURIComponent(note.categoryId)}`}
         className="back-link"
       >
-        <ArrowLeft size={15} /> {note.category}
+        <ArrowLeft size={15} /> {category?.name}
       </Link>
       <header className="article-header">
-        <p className="eyebrow">{note.category.toUpperCase()}</p>
+        <p className="eyebrow">{category?.name.toUpperCase()}</p>
         <h1>{note.title}</h1>
         <p className="article-description">{note.description}</p>
         <div className="article-meta">

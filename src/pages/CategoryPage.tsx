@@ -1,14 +1,15 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import { categories, notes } from "../data/notes";
+import { notes } from "../data/notes";
+import { categories } from "../data/categories";
 import NoteCard from "../components/NoteCard";
 
 export default function CategoryPage() {
-  const { name = "" } = useParams();
-  const categoryName = decodeURIComponent(name);
-  const category = categories.find((item) => item.name === categoryName);
-  const categoryNotes = notes.filter((note) => note.category === categoryName);
-
+  const { id = "" } = useParams();
+  const categoryId = decodeURIComponent(id);
+  const category = categories.find((item) => item.id === categoryId);
+  const categoryNotes = notes.filter((note) => note.categoryId === categoryId);
+  console.log(id, categoryId, category);
   if (!category)
     return (
       <div className="page-content">
