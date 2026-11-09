@@ -13,7 +13,6 @@ function CategoryIcon({ icon, size = 18 }: CategoryIconProps) {
   const iconStyle = {
     color: category.color,
     // backgroundColor: `${category.color}18`, //컬러뒤에 18을 붙이면 연한 배경색 만들수있음
-    width: 30,
     height: 30,
     borderRadius: 8,
     display: "flex",
